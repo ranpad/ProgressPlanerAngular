@@ -1,1 +1,55 @@
-<p>caloric-intake works!</p>
+<div fxLayout="row" style="height: calc(100vh - 100px)">
+  <div fxFlex="50">
+    <div fxFlex="20"></div>
+
+    <div fxLayout="column" fxLayoutAlign="center strech" fxFlex="60">
+
+      <div>
+        <h1>Caloric Intake</h1>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex>
+          <span>Calories:</span>
+        </div>
+
+        <div fxFlex="70">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Input your Calories</mat-label>
+            <input style="text-align: center" value=" " matInput>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex>
+          <span>Date:</span>
+        </div>
+
+        <div fxFlex="70">
+          <app-date-picker></app-date-picker>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <div fxFlex>
+          <button mat-flat-button>Confirm</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div fxFlex="20"></div>
+  </div>
+
+
+
+  <div fxFlex="50" fxLayout="column" fxLayoutAlign="center strech" >
+
+    <div class="chart-div">
+      <app-weight-chart></app-weight-chart>
+    </div>
+
+  </div>
+
+</div>

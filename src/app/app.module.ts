@@ -15,6 +15,21 @@ import { WeightTrackerComponent } from './weight-tracker/weight-tracker.componen
 import { BodyMeasuresComponent } from './body-measures/body-measures.component';
 import { CaloricIntakeComponent } from './caloric-intake/caloric-intake.component';
 import { AppRoutingModule } from './app-routing.module';
+import {MatGridListModule} from "@angular/material/grid-list";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
+import {MatDatepicker} from "@angular/material/datepicker";
+import {FlexLayoutModule} from "@angular/flex-layout";
+import { DatePickerComponent } from './date-picker/date-picker.component';
+import {FormsModule} from "@angular/forms";
+import * as CanvasJSAngularChart from '../assets/canvasjs.angular.component';
+import { WeightChartComponent } from './weight-chart/weight-chart.component';
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import { ToggleSwitchComponent } from './toggle-switch/toggle-switch.component';
+import {MatSelectModule} from '@angular/material/select';
+var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 
 @NgModule({
   declarations: [
@@ -22,7 +37,11 @@ import { AppRoutingModule } from './app-routing.module';
     ToolbarComponent,
     WeightTrackerComponent,
     BodyMeasuresComponent,
-    CaloricIntakeComponent
+    CaloricIntakeComponent,
+    DatePickerComponent,
+    CanvasJSChart,
+    WeightChartComponent,
+    ToggleSwitchComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +54,16 @@ import { AppRoutingModule } from './app-routing.module';
     MatListModule,
     RouterOutlet,
     AppRoutingModule,
-    RouterLink
+    RouterLink,
+    MatGridListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    FlexLayoutModule,
+    MatNativeDateModule,
+    FormsModule,
+    MatButtonToggleModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

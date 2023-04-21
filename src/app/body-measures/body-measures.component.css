@@ -1,0 +1,37 @@
+h1{
+  margin: 0;
+  color: #365ffe;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+mat-form-field{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+span{
+  font-size: 25px;
+}
+
+.mat-mdc-unelevated-button.mat-unthemed{
+  --mdc-filled-button-container-color: #365ffe;
+  --mdc-filled-button-label-text-color: #fff;
+  width: 100%;
+}
+
+.chart-div{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+}
+
+.select-field{
+  padding: 0 0 0 20px;
+}

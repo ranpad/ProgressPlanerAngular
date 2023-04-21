@@ -1,1 +1,137 @@
-body-measures works!
+<div fxLayout="row" style="height: calc(100vh - 100px)">
+  <div fxFlex="50">
+    <div fxFlex="15"></div>
+
+    <div fxLayout="column" fxLayoutAlign="center strech" fxFlex="70">
+
+      <div>
+        <h1>Body Measures</h1>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="24">
+          <span>Arms:</span>
+        </div>
+
+        <div fxFlex="24">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <input style="text-align: center" value=" " matInput>
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="4"></div>
+
+        <div fxFlex="24">
+          <span>Waist:</span>
+        </div>
+
+        <div fxFlex="24">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <input style="text-align: center" value=" " matInput>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="24">
+          <span>Chest:</span>
+        </div>
+
+        <div fxFlex="24">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <input style="text-align: center" value=" " matInput>
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="4"></div>
+
+        <div fxFlex="24">
+          <span>Legs:</span>
+        </div>
+
+        <div fxFlex="24">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <input style="text-align: center" value=" " matInput>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex="24">
+          <span>Shoulders:</span>
+        </div>
+
+        <div fxFlex="24">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <input style="text-align: center" value=" " matInput>
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="4"></div>
+
+        <div fxFlex="25">
+          <span>Calves:</span>
+        </div>
+
+        <div fxFlex="24">
+          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+            <input style="text-align: center" value=" " matInput>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxFlex>
+          <span>Date:</span>
+        </div>
+
+        <div fxFlex="76">
+          <app-date-picker></app-date-picker>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <div fxFlex>
+          <button mat-flat-button>Confirm</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div fxFlex="15"></div>
+  </div>
+
+
+
+  <div fxFlex="50" fxLayout="column" fxLayoutAlign="center strech" >
+
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="toggle-div">
+
+      <div fxFlex="33">
+        <form>
+          <mat-form-field class="select-field" appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Measurement</mat-label>
+            <mat-select [(ngModel)]="selectedValue" name="measurement">
+              <mat-option *ngFor="let measurement of measurements" [value]="measurement.value">
+                {{measurement.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </form>
+      </div>
+
+      <div fxFlex="33">
+        <app-toggle-switch></app-toggle-switch>
+      </div>
+
+      <div fxFlex="33"></div>
+    </div>
+
+    <div class="chart-div">
+      <app-weight-chart></app-weight-chart>
+    </div>
+
+  </div>
+
+</div>
+
