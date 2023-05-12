@@ -8,15 +8,15 @@
     <div class="divemail">
       <mat-form-field class="email" appearance="outline" subscriptSizing="dynamic">
         <mat-label>Enter your email</mat-label>
-        <input matInput placeholder="ranpad19@htl-kaindorf.at" [formControl]="email" required>
-        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        <input matInput [(ngModel)]="email" type="text" placeholder="ranpad19@htl-kaindorf.at" [formControl]="inputEmail" required>
+        <mat-error *ngIf="inputEmail.invalid">{{getErrorMessage()}}</mat-error>
       </mat-form-field>
     </div>
 
     <div class="divpassword">
       <mat-form-field class="password" appearance="outline" subscriptSizing="dynamic">
         <mat-label>Enter your password</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'">
+        <input matInput [(ngModel)]="passwd" [type]="hide ? 'password' : 'text'">
         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                 [attr.aria-pressed]="hide">
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
