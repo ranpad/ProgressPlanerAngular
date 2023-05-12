@@ -23,13 +23,18 @@ import {MatNativeDateModule} from "@angular/material/core";
 import {MatDatepicker} from "@angular/material/datepicker";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { DatePickerComponent } from './date-picker/date-picker.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import * as CanvasJSAngularChart from '../assets/canvasjs.angular.component';
 import { WeightChartComponent } from './weight-chart/weight-chart.component';
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import { ToggleSwitchComponent } from './toggle-switch/toggle-switch.component';
 import {MatSelectModule} from '@angular/material/select';
+import { CalorieChartComponent } from './calorie-chart/calorie-chart.component';
+import {NgApexchartsModule} from "ng-apexcharts";
 var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
+import { AlertModule } from '@coreui/angular';
+import {ChartjsComponent} from "@coreui/angular-chartjs";
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -41,30 +46,36 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
     DatePickerComponent,
     CanvasJSChart,
     WeightChartComponent,
-    ToggleSwitchComponent
+    ToggleSwitchComponent,
+    CalorieChartComponent,
+    LoginComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatButtonModule,
-    NgOptimizedImage,
-    MatSidenavModule,
-    MatListModule,
-    RouterOutlet,
-    AppRoutingModule,
-    RouterLink,
-    MatGridListModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatDatepickerModule,
-    FlexLayoutModule,
-    MatNativeDateModule,
-    FormsModule,
-    MatButtonToggleModule,
-    MatSelectModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatIconModule,
+        MatToolbarModule,
+        MatButtonModule,
+        NgOptimizedImage,
+        MatSidenavModule,
+        MatListModule,
+        RouterOutlet,
+        AppRoutingModule,
+        RouterLink,
+        MatGridListModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatDatepickerModule,
+        FlexLayoutModule,
+        MatNativeDateModule,
+        FormsModule,
+        MatButtonToggleModule,
+        MatSelectModule,
+        NgApexchartsModule,
+        AlertModule,
+        ChartjsComponent,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

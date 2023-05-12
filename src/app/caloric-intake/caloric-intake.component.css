@@ -24,6 +24,7 @@ span{
   --mdc-filled-button-container-color: #365ffe;
   --mdc-filled-button-label-text-color: #fff;
   width: 100%;
+  height: 56px;
 }
 
 .chart-div{

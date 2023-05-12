@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./weight-chart.component.css']
 })
 export class WeightChartComponent {
+
   chart: any;
 
   chartOptions = {
@@ -28,7 +29,7 @@ export class WeightChartComponent {
       }
     },
     data: [{
-      type: "line",
+      type: "spline",
       xValueFormatString: "DDMMYYYY",
       yValueFormatString: "$#,###.##",
       dataPoints: [
@@ -74,4 +75,6 @@ export class WeightChartComponent {
       ]
     }]
   }
+
+
 }

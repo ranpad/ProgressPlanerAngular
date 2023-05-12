@@ -1,0 +1,35 @@
+<div fxLayout="column" fxLayoutAlign="center center" style="height: calc(100vh - 100px)">
+  <div fxLayout="column" fxLayoutAlign="center strech">
+
+    <div class="header">
+      <h1>Login</h1>
+    </div>
+
+    <div class="divemail">
+      <mat-form-field class="email" appearance="outline" subscriptSizing="dynamic">
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="ranpad19@htl-kaindorf.at" [formControl]="email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="divpassword">
+      <mat-form-field class="password" appearance="outline" subscriptSizing="dynamic">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <div class="divlogin">
+      <div fxFlex>
+        <button mat-flat-button (click)="login()">Login</button>
+      </div>
+    </div>
+
+  </div>
+
+</div>

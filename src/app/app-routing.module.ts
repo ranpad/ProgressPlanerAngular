@@ -5,7 +5,7 @@ import {CaloricIntakeComponent} from "./caloric-intake/caloric-intake.component"
 import {BodyMeasuresComponent} from "./body-measures/body-measures.component";
 import {WeightTrackerComponent} from "./weight-tracker/weight-tracker.component";
 import {BrowserModule} from "@angular/platform-browser";
-
+import{LoginComponent} from "./login/login.component";
 
 
 @NgModule({
@@ -17,6 +17,7 @@ import {BrowserModule} from "@angular/platform-browser";
       {path: 'weight-tracker', component: WeightTrackerComponent},
       {path: 'body-measures', component: BodyMeasuresComponent},
       {path: 'caloric-intake', component: CaloricIntakeComponent},
+      {path: '', component: LoginComponent},
   ]),
 ]
 })
