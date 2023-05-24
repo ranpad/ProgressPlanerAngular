@@ -31,7 +31,7 @@ export class LoginComponent {
     const url: string = 'http://localhost:8080/api/login';
 
     const user = {
-      username : this.email,
+      email : this.email,
       password : this.passwd
     };
 
