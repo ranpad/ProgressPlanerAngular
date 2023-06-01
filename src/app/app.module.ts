@@ -35,6 +35,9 @@ var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
 import { AlertModule } from '@coreui/angular';
 import {ChartjsComponent} from "@coreui/angular-chartjs";
 import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { SnackbarComponent } from './snackbar/snackbar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,9 @@ import { LoginComponent } from './login/login.component';
     WeightChartComponent,
     ToggleSwitchComponent,
     CalorieChartComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent,
+    SnackbarComponent
   ],
     imports: [
         BrowserModule,
@@ -74,7 +79,8 @@ import { LoginComponent } from './login/login.component';
         NgApexchartsModule,
         AlertModule,
         ChartjsComponent,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]

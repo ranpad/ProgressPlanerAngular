@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import {FormControl, Validators} from "@angular/forms";
+import {Router} from "@angular/router";
+import {MatSnackBar} from "@angular/material/snack-bar";
+import {LoginService} from "../services/login.service";
 
 @Component({
   selector: 'app-login',
@@ -12,6 +15,10 @@ export class LoginComponent {
   hide = true;
   email: string | undefined;
   passwd: string | undefined;
+
+  constructor(private router: Router,
+              private loginService: LoginService
+              /**private snackBar: MatSnackBar*/) { }
 
   /*constructor(email: string, passwd: string) {
     this.email = email;
@@ -27,35 +34,14 @@ export class LoginComponent {
     return this.inputEmail.hasError('email') ? 'Not a valid email' : '';
   }
 
-  login(){
-    const url: string = 'http://localhost:8080/api/login';
-
-    const user = {
-      email : this.email,
-      password : this.passwd
-    };
-
-    const init = {
-      method : 'POST',
-      headers: {
-        'Content-Type' : 'application/json'
+  login(): void{
+    this.loginService.login(this.email, this.passwd).subscribe(
+      (response) => {
+        this.router.navigate(['/dashboard']);
       },
-      body : JSON.stringify(user)
-    }
-
-    fetch(url, init)
-      .then(res => {
-        if (!res.ok){
-          throw Error('HTTP-Error: ' + res.status);
-        }
-        console.log(res);
-        return res.json();
-      })
-      .then(json => {
-        console.log(json)
-      })
-      .catch(err => {
-        console.log(err.toString);
-      })
+      (error) => {
+        console.log("Wrong Password or Email")
+      }
+    )
   }
 }

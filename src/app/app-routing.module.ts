@@ -6,6 +6,8 @@ import {BodyMeasuresComponent} from "./body-measures/body-measures.component";
 import {WeightTrackerComponent} from "./weight-tracker/weight-tracker.component";
 import {BrowserModule} from "@angular/platform-browser";
 import{LoginComponent} from "./login/login.component";
+import {DASH} from "@angular/cdk/keycodes";
+import {DashboardComponent} from "./dashboard/dashboard.component";
 
 
 @NgModule({
@@ -17,6 +19,7 @@ import{LoginComponent} from "./login/login.component";
       {path: 'weight-tracker', component: WeightTrackerComponent},
       {path: 'body-measures', component: BodyMeasuresComponent},
       {path: 'caloric-intake', component: CaloricIntakeComponent},
+      {path: 'dashboard', component: DashboardComponent},
       {path: '', component: LoginComponent},
   ]),
 ]

@@ -13,4 +13,5 @@ import {BrowserModule} from "@angular/platform-browser";
 })
 export class AppComponent {
   title = 'ProgressPlanerAngular';
+  showMenu: boolean = true;
 }

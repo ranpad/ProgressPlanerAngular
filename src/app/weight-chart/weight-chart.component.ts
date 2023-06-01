@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {WeightService} from "../services/weight.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-weight-chart',
@@ -7,7 +10,14 @@ import { Component } from '@angular/core';
 })
 export class WeightChartComponent {
 
+  constructor(private weightService: WeightService) {}
+
   chart: any;
+  data = this.weightService.getWeightData();
+
+  ngOnInit(){
+
+  }
 
   chartOptions = {
     theme: "light2",
@@ -75,6 +85,7 @@ export class WeightChartComponent {
       ]
     }]
   }
+
 
 
 }
