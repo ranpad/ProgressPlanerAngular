@@ -36,8 +36,9 @@ import { AlertModule } from '@coreui/angular';
 import {ChartjsComponent} from "@coreui/angular-chartjs";
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { SnackbarComponent } from './snackbar/snackbar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {WeightChartService} from "./services/weight-chart.service";
 
 @NgModule({
   declarations: [
@@ -52,8 +53,7 @@ import { HttpClientModule } from '@angular/common/http';
     ToggleSwitchComponent,
     CalorieChartComponent,
     LoginComponent,
-    DashboardComponent,
-    SnackbarComponent
+    DashboardComponent
   ],
     imports: [
         BrowserModule,
@@ -80,9 +80,10 @@ import { HttpClientModule } from '@angular/common/http';
         AlertModule,
         ChartjsComponent,
         ReactiveFormsModule,
-        HttpClientModule
+        HttpClientModule,
+        MatSnackBarModule
     ],
-  providers: [],
+  providers: [WeightChartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

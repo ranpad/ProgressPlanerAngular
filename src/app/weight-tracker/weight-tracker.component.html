@@ -1,48 +1,37 @@
 <div fxLayout="row" style="height: calc(100vh - 100px)">
   <div fxFlex="50">
     <div fxFlex="20"></div>
-
-    <div fxLayout="column" fxLayoutAlign="center strech" fxFlex="60">
-
+    <div fxLayout="column" fxLayoutAlign="center stretch" fxFlex="60">
       <div>
         <h1>Weight Tracker</h1>
       </div>
-
       <div fxLayout="row" fxLayoutAlign="start center">
         <div fxFlex>
           <span>Weight:</span>
         </div>
-
         <div fxFlex="70">
-          <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
+          <mat-form-field class="example-full-width" appearance="outline" suffixSize="dynamic">
             <mat-label>Input your Weight</mat-label>
-            <input style="text-align: center" value=" " matInput>
+            <input style="text-align: center" value="" matInput>
           </mat-form-field>
         </div>
       </div>
-
       <div fxLayout="row" fxLayoutAlign="start center">
         <div fxFlex>
           <span>Date:</span>
         </div>
-
         <div fxFlex="70">
           <app-date-picker></app-date-picker>
         </div>
       </div>
-
       <div fxLayout="row" fxLayoutAlign="center center">
         <div fxFlex>
-          <button (click)="getWeightData()" mat-flat-button>Confirm</button>
+          <button (click)="confirm()" mat-flat-button>Confirm</button>
         </div>
       </div>
-
     </div>
-
     <div fxFlex="20"></div>
   </div>
-
-
 
   <div fxFlex="50" fxLayout="column" fxLayoutAlign="center strech" >
 

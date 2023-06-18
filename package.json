@@ -28,6 +28,7 @@
     "@coreui/icons-angular": "^4.4.1",
     "apexcharts": "^3.39.0",
     "chart.js": "^3.9.1",
+    "circular-json": "^0.5.9",
     "ng-apexcharts": "^1.7.5",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

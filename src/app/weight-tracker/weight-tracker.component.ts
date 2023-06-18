@@ -1,39 +1,31 @@
-import { Component } from '@angular/core';
-import {FormControl} from "@angular/forms";
-import {MatInputModule} from "@angular/material/input";
-import {MatDatepickerModule} from "@angular/material/datepicker";
-import {MatNativeDateModule} from "@angular/material/core";
-import {MatDatepicker} from "@angular/material/datepicker";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {WeightService} from "../services/weight.service";
-
+import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { WeightService } from '../services/weight.service';
+import { Observable } from 'rxjs';
+import { WeightData } from '../services/weight.data';
+import { WeightChartService } from '../services/weight-chart.service';
 
 @Component({
   selector: 'app-weight-tracker',
   templateUrl: './weight-tracker.component.html',
-  styleUrls: ['./weight-tracker.component.css']
+  styleUrls: ['./weight-tracker.component.css'],
 })
-export class WeightTrackerComponent {
+export class WeightTrackerComponent implements OnInit {
   private today: Date = new Date();
   date = new FormControl(this.today.toLocaleDateString());
 
+  constructor(
+    private http: HttpClient,
+    private weightService: WeightService,
+    private weightChartService: WeightChartService
+  ) {}
 
-  constructor(private http: HttpClient,
-              private weightService: WeightService) {}
-
-  ngOnInit(){
-    this.getWeightData();
+  ngOnInit() {
+    this.weightChartService.renderChart();
   }
 
-  getWeightData(): void{
-    this.weightService.getWeightData().subscribe(
-      (response) => {
-        console.log(response);
-        return response;
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
+  confirm(): void {
+    this.weightChartService.renderChart();
   }
 }
