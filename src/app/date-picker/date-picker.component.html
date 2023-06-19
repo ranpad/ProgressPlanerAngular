@@ -1,6 +1,6 @@
-<mat-form-field  class="datepicker" appearance="outline" subscriptSizing="dynamic">
+<mat-form-field class="datepicker" appearance="outline" subscriptSizing="dynamic">
   <mat-label>Choose a date</mat-label>
-  <input style="text-align: center" matInput [matDatepicker]="picker" [ngModel]="currentDate">
-  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <input matInput style="text-align: center" [matDatepicker]="picker" [(ngModel)]="currentDate" (dateChange)="onDateChanged()">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
   <mat-datepicker #picker></mat-datepicker>
 </mat-form-field>

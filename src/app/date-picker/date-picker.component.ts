@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-date-picker',
@@ -6,13 +6,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./date-picker.component.css']
 })
 export class DatePickerComponent {
-  public currentDate: Date;
+
+  @Output() dateSelected = new EventEmitter<string>();
+  currentDate: string | undefined;
+
+  public currentDateObject: Date;
 
   constructor() {
-    this.currentDate = new Date();
+    this.currentDateObject = new Date();
   }
 
   ngOnInit() {
-    this.currentDate = new Date();
+    this.currentDateObject = new Date();
   }
+
+  onDateChanged(): void {
+    console.log(this.currentDate);
+    this.dateSelected.emit(this.currentDate);
+  }
+
 }

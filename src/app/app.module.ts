@@ -83,7 +83,11 @@ import {WeightChartService} from "./services/weight-chart.service";
         HttpClientModule,
         MatSnackBarModule
     ],
-  providers: [WeightChartService],
+  exports: [DatePickerComponent],
+  providers: [
+    WeightChartService,
+    DatePickerComponent
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
