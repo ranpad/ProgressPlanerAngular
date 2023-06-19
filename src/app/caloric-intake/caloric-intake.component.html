@@ -16,7 +16,7 @@
         <div fxFlex="70">
           <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
             <mat-label>Input your Calories</mat-label>
-            <input style="text-align: center" value=" " matInput>
+            <input matInput [(ngModel)]="calorieInputValue" style="text-align: center" value=" ">
           </mat-form-field>
         </div>
       </div>
@@ -27,13 +27,13 @@
         </div>
 
         <div fxFlex="70">
-          <app-date-picker></app-date-picker>
+          <app-date-picker (dateSelected)="handleDateSelected($event)"></app-date-picker>
         </div>
       </div>
 
       <div fxLayout="row" fxLayoutAlign="center center">
         <div fxFlex>
-          <button mat-flat-button>Confirm</button>
+          <button mat-flat-button (click)="confirm()">Confirm</button>
         </div>
       </div>
 
