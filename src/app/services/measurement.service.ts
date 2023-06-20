@@ -1,22 +1,28 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {Observable} from 'rxjs';
 import {CalorieData} from "./calorie.data";
 
 @Injectable({
   providedIn: 'root'
 })
-export class CalorieService {
+export class MeasurementService {
   constructor(private http: HttpClient) { }
 
 
-  getCalorieData(): Observable<CalorieData[]> {
+  getMeasurmentData(selectedValue: string): Observable<CalorieData[]> {
 
     const email = 'ranpad19@htl-kaindorf.at';
 
-    const headers = new HttpHeaders().set('user-mail', email);
+    console.log("selected Value: " + selectedValue)
 
-    return this.http.get<CalorieData[]>('http://localhost:8080/api/calories', { headers: headers })
+    const headers = new HttpHeaders()
+      .set('user-mail', email)
+      .set('column', selectedValue);
+
+    console.log("headers: " + headers.get('user-mail') + ", " + headers.get('column'))
+
+    return this.http.get<CalorieData[]>('http://localhost:8080/api/measurements', { headers: headers })
   }
 
 

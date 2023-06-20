@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { CalorieService } from '../services/calorie.service';
+import {CalorieChartComponent} from "../calorie-chart/calorie-chart.component";
 
 @Component({
   selector: 'app-caloric-intake',
@@ -9,7 +10,8 @@ import { CalorieService } from '../services/calorie.service';
 export class CaloricIntakeComponent{
 
   constructor(
-    private calorieService: CalorieService
+    private calorieService: CalorieService,
+    private calorieChart: CalorieChartComponent
   ) {}
 
   selectedDate: string | undefined;
@@ -29,9 +31,9 @@ export class CaloricIntakeComponent{
       console.log(response);
     });
 
-    /*setTimeout(() => {
-      this.weightChartService.renderChart();
-    }, 1000);*/
+    setTimeout(() => {
+      this.calorieChart.getCalorieData();
+    }, 1000);
   }
 
   handleDateSelected(date: string): string{
