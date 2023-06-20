@@ -60,7 +60,7 @@ export class CalorieChartComponent{
   }
 
   renderChartWithUpdatedData(): void {
-    this.chart = new CanvasJS.Chart('chartContainer', this.chartOptions);
+    this.chart = new CanvasJS.Chart('calorieChartContainer', this.chartOptions);
     this.chart?.render();
   }
 

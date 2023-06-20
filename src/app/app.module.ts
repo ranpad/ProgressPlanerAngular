@@ -39,6 +39,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {WeightChartService} from "./services/weight-chart.service";
+import { MeasurementChartComponent } from './measurement-chart/measurement-chart.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import {WeightChartService} from "./services/weight-chart.service";
     ToggleSwitchComponent,
     CalorieChartComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    MeasurementChartComponent
   ],
     imports: [
         BrowserModule,
@@ -84,11 +86,13 @@ import {WeightChartService} from "./services/weight-chart.service";
         MatSnackBarModule
     ],
   exports: [DatePickerComponent,
-            CalorieChartComponent],
+            CalorieChartComponent,
+            MeasurementChartComponent],
   providers: [
     WeightChartService,
     DatePickerComponent,
-    CalorieChartComponent
+    CalorieChartComponent,
+    MeasurementChartComponent
     ],
   bootstrap: [AppComponent]
 })

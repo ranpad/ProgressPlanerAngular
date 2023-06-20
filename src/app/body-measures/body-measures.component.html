@@ -15,7 +15,7 @@
 
         <div fxFlex="24">
           <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
-            <input style="text-align: center" value=" " matInput>
+            <input [(ngModel)]="arm" style="text-align: center" value=" " matInput>
           </mat-form-field>
         </div>
 
@@ -27,7 +27,7 @@
 
         <div fxFlex="24">
           <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
-            <input style="text-align: center" value=" " matInput>
+            <input [(ngModel)]="waist" style="text-align: center" value=" " matInput>
           </mat-form-field>
         </div>
       </div>
@@ -39,7 +39,7 @@
 
         <div fxFlex="24">
           <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
-            <input style="text-align: center" value=" " matInput>
+            <input [(ngModel)]="chest" style="text-align: center" value=" " matInput>
           </mat-form-field>
         </div>
 
@@ -51,7 +51,7 @@
 
         <div fxFlex="24">
           <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
-            <input style="text-align: center" value=" " matInput>
+            <input [(ngModel)]="leg" style="text-align: center" value=" " matInput>
           </mat-form-field>
         </div>
       </div>
@@ -63,7 +63,7 @@
 
         <div fxFlex="24">
           <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
-            <input style="text-align: center" value=" " matInput>
+            <input [(ngModel)]="shoulder" style="text-align: center" value=" " matInput>
           </mat-form-field>
         </div>
 
@@ -75,7 +75,7 @@
 
         <div fxFlex="24">
           <mat-form-field class="example-full-width" appearance="outline" subscriptSizing="dynamic">
-            <input style="text-align: center" value=" " matInput>
+            <input [(ngModel)]="calf" style="text-align: center" value=" " matInput>
           </mat-form-field>
         </div>
       </div>
@@ -86,13 +86,13 @@
         </div>
 
         <div fxFlex="76">
-          <app-date-picker></app-date-picker>
+          <app-date-picker (dateSelected)="handleDateSelected($event)"></app-date-picker>
         </div>
       </div>
 
       <div fxLayout="row" fxLayoutAlign="center center">
         <div fxFlex>
-          <button mat-flat-button>Confirm</button>
+          <button mat-flat-button (click)="renderChart()">Confirm</button>
         </div>
       </div>
 
@@ -107,7 +107,7 @@
 
     <div fxLayout="row" fxLayoutAlign="space-between center" class="toggle-div">
 
-      <div fxFlex="33">
+      <div fxFlex="23">
         <form>
           <mat-form-field class="select-field" appearance="outline" subscriptSizing="dynamic">
             <mat-label>Measurement</mat-label>
@@ -120,8 +120,10 @@
         </form>
       </div>
 
-      <div>
-        <button mat-flat-button (click)="renderChart()"></button>
+      <div fxFlex="4"></div>
+
+      <div fxFlex="8">
+        <button mat-flat-button (click)="reloadChart()">Load</button>
       </div>
 
       <div fxFlex="33">
@@ -132,7 +134,7 @@
     </div>
 
     <div class="chart-div">
-      <!--<app-calorie-chart></app-calorie-chart>-->
+      <app-measurement-chart></app-measurement-chart>
     </div>
 
   </div>

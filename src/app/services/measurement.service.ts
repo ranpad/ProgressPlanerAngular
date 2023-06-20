@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {CalorieData} from "./calorie.data";
+import {MeasurementData} from "./measurement.data";
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class MeasurementService {
   constructor(private http: HttpClient) { }
 
 
-  getMeasurmentData(selectedValue: string): Observable<CalorieData[]> {
+  getMeasurmentData(selectedValue: string): Observable<MeasurementData[]> {
 
     const email = 'ranpad19@htl-kaindorf.at';
 
@@ -22,24 +23,27 @@ export class MeasurementService {
 
     console.log("headers: " + headers.get('user-mail') + ", " + headers.get('column'))
 
-    return this.http.get<CalorieData[]>('http://localhost:8080/api/measurements', { headers: headers })
+    return this.http.get<MeasurementData[]>('http://localhost:8080/api/measurements', { headers: headers })
   }
 
 
-  postCalorieData(currentDate: Date | undefined, calories: number){
+  postMeasurementData(currentDate: string | undefined, arm: string | undefined, waist: string | undefined, chest: string | undefined, leg: string | undefined, shoulder: string | undefined, calf: string | undefined){
     let userid: number = 1;
 
-    console.log("weight.service" + currentDate)
-
-    const calorieObject = {
+    const measurementObject = {
       userId: userid,
       validFrom: currentDate,
-      calories: calories
+      arm: arm,
+      waist: waist,
+      chest: chest,
+      leg: leg,
+      shoulder: shoulder,
+      calf: calf
     };
 
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     const options = { headers: headers };
 
-    return this.http.post('http://localhost:8080/api/post/calories', calorieObject, options);
+    return this.http.post('http://localhost:8080/api/post/measurements', measurementObject, options);
   }
 }
